@@ -10,13 +10,13 @@
                         <div class="row">
                             <div class="col-12 p-1">
                                 <label class="form-label">Date *</label>
-                                <input type="date" class="form-control" id="entryDate">
+                                <input type="date" class="form-control" id="entryDate" value="">
                                 <label class="form-label">Category *</label>
                                 <select class="form-control" name="cat_id" id="categoryID">
                                     <option value="">Select Category</option>
                                 </select>
                                 <label class="form-label">Amount *</label>
-                                <input type="number" class="form-control" id="amount">
+                                <input type="number" class="form-control" id="amount" value="">
                                 <label class="form-label">Description</label>
                                 <textarea class="form-control" name="" id="description" cols="30" rows="3"></textarea>
 
@@ -38,11 +38,11 @@
 <script>
 
     async function getCategory(){
-        let res = await axios.get("/list-category")
+        let res = await axios.get("/list-category");
         res.data.forEach(function (item,i) {
             let option=`<option value="${item['id']}">${item['cat_name']}</option>`
             $("#categoryID").append(option);
-        })
+        });
     }
 
     async function FillUpUpdateForm(id){
@@ -51,7 +51,7 @@
         await getCategory();
         let res=await axios.post("/edit-income",{id:id})
         hideLoader();
-
+// console.log(res.data);
         $('#entryDate').val(res.data['entryDate']);
         $('#categoryID').val(res.data['cat_id']);
         $('#amount').val(res.data['amount']);

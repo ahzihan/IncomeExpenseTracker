@@ -49,9 +49,9 @@
         $('#updateID').val(id);
         showLoader();
         await getCategory();
-        let res=await axios.post("/edit-expense",{id:id})
+        let res=await axios.post("/edit-expense",{id:id});
         hideLoader();
-
+console.log(res.data);
         $('#entryDate').val(res.data['entryDate']);
         $('#categoryID').val(res.data['cat_id']);
         $('#amount').val(res.data['amount']);

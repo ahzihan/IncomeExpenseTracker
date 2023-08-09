@@ -13,6 +13,8 @@
     <link href="{{asset('css/datatables.min.css')}}" rel="stylesheet" />
     <link href="{{asset('css/datatables-select.min.css')}}" rel="stylesheet" />
 
+    <link href="{{asset('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css')}}" rel="stylesheet" />
+
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/toastify-js.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
@@ -73,6 +75,21 @@
     <a href="{{url("/customerPage")}}" class="side-bar-item">
         <i class="fa fa-chevron-circle-right  text-dark"></i>
         <span class="side-bar-item-caption">Customer</span>
+    </a>
+
+    <a href="{{url("/categoryPage")}}" class="side-bar-item">
+        <i class="fa fa-chevron-circle-right  text-dark"></i>
+        <span class="side-bar-item-caption">Category</span>
+    </a>
+
+    <a href="{{url("/incomePage")}}" class="side-bar-item">
+        <i class="fa fa-chevron-circle-right  text-dark"></i>
+        <span class="side-bar-item-caption">Income</span>
+    </a>
+
+    <a href="{{url("/expensePage")}}" class="side-bar-item">
+        <i class="fa fa-chevron-circle-right  text-dark"></i>
+        <span class="side-bar-item-caption">Expense</span>
     </a>
 
 </div>

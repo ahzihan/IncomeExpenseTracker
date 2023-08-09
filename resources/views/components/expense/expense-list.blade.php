@@ -52,9 +52,9 @@ async function getList() {
     res.data.forEach(function (item,index) {
         let row=`<tr>
                     <td>${index+1}</td>
-                    <td>${item.user['firstName']} ${item.user['lastName']}</td>
                     <td>${item['entryDate']}</td>
-                    <td>${item.category['cat_name']}</td>
+                    <td>${item.user['firstName']} ${item.user['lastName']}</td>
+                    <td>${item['cat_id']}</td>
                     <td>${item['amount']}</td>
                     <td>${item['description']}</td>
                     <td>

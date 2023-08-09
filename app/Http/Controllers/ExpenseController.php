@@ -14,7 +14,7 @@ class ExpenseController extends Controller
 
     function ExpenseList(Request $request){
         $user_id=$request->header('id');
-        return Expense::where('user_id',$user_id)->get();
+        return Expense::with('category', 'user')->where('user_id', $user_id)->get();
     }
 
     function ExpenseCreate(Request $request){

@@ -14,7 +14,7 @@ class IncomeController extends Controller
 
     function IncomeList(Request $request){
         $user_id=$request->header('id');
-        return Income::where('user_id',$user_id)->get();
+        return Income::with('category', 'user')->where('user_id', $user_id)->get();
     }
 
     function IncomeCreate(Request $request){
