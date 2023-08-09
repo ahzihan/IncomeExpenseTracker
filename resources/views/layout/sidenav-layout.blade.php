@@ -92,6 +92,11 @@
         <span class="side-bar-item-caption">Expense</span>
     </a>
 
+    <a href="{{url("/expenditurePage")}}" class="side-bar-item">
+        <i class="fa fa-chevron-circle-right  text-dark"></i>
+        <span class="side-bar-item-caption">Expenditure Report</span>
+    </a>
+
 </div>
 
 

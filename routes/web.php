@@ -7,6 +7,7 @@ use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExpendetureController;
 use App\Http\Middleware\TokenVerificationMiddleware;
 
 /*
@@ -42,6 +43,7 @@ Route::get('/categoryPage', [CategoryController::class, 'CategoryPage'])->middle
 Route::get('/incomePage', [IncomeController::class, 'IncomePage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/expensePage', [ExpenseController::class, 'ExpensePage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/customerPage', [CustomerController::class, 'CustomerPage'])->middleware([TokenVerificationMiddleware::class]);
+Route::get('/expenditurePage', [ExpendetureController::class, 'ExpenditurePage'])->middleware([TokenVerificationMiddleware::class]);
 
 //Customer Api
 Route::get('/list-customer', [CustomerController::class, 'CustomerList'])->middleware([TokenVerificationMiddleware::class]);
@@ -71,6 +73,8 @@ Route::post("/edit-expense", [ExpenseController::class, 'ExpenseByID'])->middlew
 Route::post('/update-expense', [ExpenseController::class, 'ExpenseUpdate'])->middleware([TokenVerificationMiddleware::class]);
 Route::post('/delete-expense', [ExpenseController::class, 'ExpenseDelete'])->middleware([TokenVerificationMiddleware::class]);
 
+//Report
+Route::get('/list-expenditure', [ExpendetureController::class, 'ExpenditureList'])->middleware([TokenVerificationMiddleware::class]);
 
 
 
