@@ -13,12 +13,14 @@ class ExpendetureController extends Controller
     }
 
     function ExpenditureList(){
-        $incomes = Income::all();
-        $expenses = Expense::all();
+        $incomes = Income::with('user')->all();
+        $expenses = Expense::with('user')->all();
 
         $totalIncome = 0;
+        $userId = 0;
         foreach ($incomes as $income) {
             $totalIncome += $income->amount;
+            $userId=$income->user_id;
         }
 
         $totalExpenses = 0;
@@ -30,7 +32,8 @@ class ExpendetureController extends Controller
         $data[]=[
             'totalIncome'=>$totalIncome,
             'totalExpenses'=>$totalExpenses,
-            'netIncome'=>$netIncome
+            'netIncome'=>$netIncome,
+            'userId'=>$userId
         ];
 
         return $data;

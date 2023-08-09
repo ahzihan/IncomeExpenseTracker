@@ -12,6 +12,7 @@
                     <thead>
                     <tr class="bg-light">
                         <th>No</th>
+                        <th>User</th>
                         <th>Total Income</th>
                         <th>Total Expense</th>
                         <th>Current Balance</th>
@@ -48,6 +49,7 @@ async function getList() {
     res.data.forEach(function (item,index) {
         let row=`<tr>
                     <td>${index+1}</td>
+                    <td>${item['userId']}</td>
                     <td>${item['totalIncome']}</td>
                     <td>${item['totalExpenses']}</td>
                     <td>${item['netIncome']}</td>
